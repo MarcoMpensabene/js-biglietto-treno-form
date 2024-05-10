@@ -17,17 +17,18 @@
 const userAgeEl = document.querySelector("input#userAge");
 const userKmEl = document.querySelector("input#userKm");
 
+const priceEl = document.querySelector('span#price');
+const discountPriceEl = document.querySelector('span#discount-price');
+const discountNumberEl = document.querySelector('span#discount-number');
 
 let buttonEl = document.querySelector("button");
 
-buttonEl.addEventListener("click" , 
-
-    function() {
+document.querySelector('#output').addEventListener("click" , function() {
         const userKm = Number.parseFloat(userKmEl.value , 10);
         const userAge =  Number.parseInt(userAgeEl.value , 10);
 
-        const priceForKm = 0.267113
-        let discount = 0;
+        const priceForKm = 0.267113;
+        let discount= 0;
 
         if (userAge >= 63){
             discount = 37.893;
@@ -38,7 +39,9 @@ buttonEl.addEventListener("click" ,
         let finalDiscount = (priceForKm * userKm) / 100 * discount;
         let finalPrice = (priceForKm * userKm) - finalDiscount;
         
-        console.log(finalPrice.toFixed(2));
+        discountNumberEl.innerHTML = discount + "%";
+        discountPriceEl.innerHTML = finalDiscount.toFixed(2);
+        priceEl.innerHTML = finalPrice.toFixed(2) + "€";
 }
 );
     
