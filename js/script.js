@@ -11,33 +11,34 @@
 // > La risposta finale (o output) sarà anch’essa da scrivere in console.MILESTONE 2:
 // > Solo una volta che il milestone 1 sarà completo e funzionante allora realizzeremo un form in pagina in cui l’utente potrà inserire i dati e visualizzare il calcolo finale con il prezzo.
 // > Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagina (il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo).
-const userKmEl = document.getElementById("userKm").value;
 
-const userAgeEl = document.getElementById("userAge").value;
 
-const priceForKm = 0.267113
-let discount = 0;
 
-if (userAgeEl >= 63){
-    discount = 37.893;
-} else if (userAgeEl <= 21){
-    discount = 24.552;
-}
+const userAgeEl = document.querySelector("input#userAge");
+const userKmEl = document.querySelector("input#userKm");
 
-let price = priceForKm * userKmEl ;
-price = price - ((price / 100) * discount);
 
 let buttonEl = document.querySelector("button");
 
 buttonEl.addEventListener("click" , 
 
     function() {
-        document.getElementById("price").innerHTML = price.toFixed(2)
-    }
+        const userKm = Number.parseFloat(userKmEl.value , 10);
+        const userAge =  Number.parseInt(userAgeEl.value , 10);
 
-)
+        const priceForKm = 0.267113
+        let discount = 0;
+
+        if (userAge >= 63){
+            discount = 37.893;
+        } else if (userAge <= 21){
+            discount = 24.552;
+        }
+        
+        let finalDiscount = (priceForKm * userKm) / 100 * discount;
+        let finalPrice = (priceForKm * userKm) - finalDiscount;
+        
+        console.log(finalPrice.toFixed(2));
+}
+);
     
-
-
-
-//  ? console.log(price.toFixed(2));
