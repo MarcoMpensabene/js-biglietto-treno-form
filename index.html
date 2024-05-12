@@ -11,23 +11,30 @@
 </head>
 <body>
     <main>  
-        <div>  
-            <label for="userAge">Inserisci la tua età</label>
-            <input type="text" name="userAge" id="userAge" placeholder="inserisci la tua età">
-        </div>
-        <div> 
-            <label for="userKm">Inserisci la distanza in kilometri</label>
-            <input type="text" name="userKm" id="userKm" placeholder="inserisci il numero di kilometri">
-        </div>  
-        <div>  
+        <header> 
+            <h1>
+                Biglietteria Virtuale 1999
+            </h1>
+            <div>  
+                <label for="userAge">Inserisci la tua età</label>
+                <input type="text" name="userAge" id="userAge" placeholder="inserisci la tua età">
+            </div>
+            <div> 
+                <label for="userKm">Inserisci la distanza in kilometri</label>
+                <input type="text" name="userKm" id="userKm" placeholder="inserisci il numero di kilometri">
+            </div>  
+        </header>
+       
+        <section>  
+            <h1>
+                Premi il bottone per visualizzare il Prezzo Finale
+            </h1>
             <button id="output">Premi</button>
-        <h1>
-            Premi il bottono per visualizzare il Prezzo Finale:
-        </h1>
-        <p>La percentuale dello sconto equivale a : <span id="discount-number">0%</span></p>
-        <p>Lo sconto equivale a : <span id="discount-price"></span></p>
-        <p>Il prezzo finale è : <span id="price"></span></p>
-        </div>   
+            
+            <p>La percentuale dello sconto equivale a : <span id="discount-number">0%</span></p>
+            <p>Lo sconto equivale a : <span id="discount-price"></span></p>
+            <p>Il prezzo finale è : <span id="price"></span></p>
+        </section>   
     
     </main>
     

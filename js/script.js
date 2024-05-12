@@ -40,7 +40,7 @@ document.querySelector('#output').addEventListener("click" , function() {
         let finalPrice = (priceForKm * userKm) - finalDiscount;
         
         discountNumberEl.innerHTML = discount + "%";
-        discountPriceEl.innerHTML = finalDiscount.toFixed(2);
+        discountPriceEl.innerHTML = finalDiscount.toFixed(2) + "€";
         priceEl.innerHTML = finalPrice.toFixed(2) + "€";
 }
 );
